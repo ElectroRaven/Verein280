@@ -1,0 +1,119 @@
+/* Grundlegende Stile */
+body {
+    margin: 0;
+    font-family: 'Poppins', Arial, sans-serif; /* Schriftart */
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Volle Höhe der Seite */
+    position: relative; /* Ermöglicht absolute Positionierung innerhalb des Body */
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    right: 20px;
+}
+
+.logo img {
+    max-height: 230px;
+    width: auto;
+}
+
+.top-nav {
+    position: absolute;
+    top: calc(50% - 220px);
+    left: 425px;
+    font-family: 'Poppins', Arial, sans-serif;
+    z-index: 10;
+}
+
+.top-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.top-nav ul li a {
+    text-decoration: none;
+    color: #000; 
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s, transform 0.3s ease;
+}
+
+.top-nav ul li a:hover {
+    color: #007bff;
+    transform: scale(1.1);
+}
+
+/* Content-Box */
+.content-box {
+    background-color: #007bff;
+    color: #fff;
+    padding: 40px;
+    max-width: 1000px; 
+    height: 300px; 
+    border-radius: 5px;
+    text-align: justify;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+    font-family: 'Poppins', Arial, sans-serif;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+footer {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+footer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+}
+
+footer ul li {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+footer ul li:hover {
+    transform: scale(1.05);
+    color: #000;
+}
+
+footer ul li a:hover {
+    color: inherit;
+}
+
+footer ul li.separator {
+    font-size: 1rem;
+    color: #000;
+    font-weight: bold;
+    pointer-events: none;
+}
