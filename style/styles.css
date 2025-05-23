@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: 'Poppins', Arial, sans-serif; /* Schriftart */
-    background-color: #f4f4f4;
+    background-color: #e6d9a5;
     color: #333;
     display: flex;
     justify-content: center;
@@ -35,8 +35,8 @@ header {
 
 .top-nav ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    margin: -25px;
+    padding: 1;
     display: flex;
     gap: 30px;
 }
@@ -45,7 +45,7 @@ header {
     text-decoration: none;
     color: #000; 
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1.4rem;
     transition: color 0.3s, transform 0.3s ease;
 }
 
@@ -54,14 +54,23 @@ header {
     transform: scale(1.1);
 }
 
+.top-nav ul li.separator {
+    font-size: 1rem;
+    color: #000;
+    margin: 30;
+    pointer-events: none;
+}
+
 /* Content-Box */
 .content-box {
-    background-color: #007bff;
+    background-color: #1a3474 ;
     color: #fff;
     padding: 40px;
     max-width: 1000px; 
     height: 300px; 
-    border-radius: 5px;
+    border-radius: 15px;
+    
+    border-color: b2d6eb ;
     text-align: justify;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     position: relative;
@@ -98,6 +107,7 @@ footer ul li {
 
 footer ul li a {
     text-decoration: none;
+    font-size: 1.4rem;
     color: #000;
     font-weight: bold;
 }
@@ -112,7 +122,7 @@ footer ul li a:hover {
 }
 
 footer ul li.separator {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #000;
     font-weight: bold;
     pointer-events: none;
