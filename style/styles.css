@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: 'Poppins', Arial, sans-serif; /* Schriftart */
-    background-color: #e6d9a5;
+    background-color: #fffeef;
     color: #333;
     display: flex;
     justify-content: center;
@@ -72,7 +72,11 @@ header {
     
     border-color: b2d6eb ;
     text-align: justify;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    /*  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);*/
+    box-shadow:
+    0 0 0 2px #4878f2,       /* weißer Rand direkt am Element */
+    0 0 10px #4878f2,        /* weicher Schein */
+    0 0 20px rgba(255, 255, 255, 0.4);
     position: relative;
     z-index: 1;
     font-family: 'Poppins', Arial, sans-serif;
