@@ -23,21 +23,21 @@ header {
 }
 
 .logo img {
-    max-height: 230px;
+    max-height: 200px;
     width: auto;
 }
 
 .top-nav {
     position: absolute;
     top: calc(50% - 220px);
-    left: 425px;
+    left: 550px; /* shifted further right from 425px */
     font-family: 'Poppins', Arial, sans-serif;
     z-index: 10;
 }
 
 .top-nav ul {
     list-style-type: none;
-    margin: -25px;
+    margin: -100px;
     padding: 1;
     display: flex;
     gap: 30px;
@@ -47,7 +47,7 @@ header {
     text-decoration: none;
     color: #000; 
     font-weight: bold;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     transition: color 0.3s, transform 0.3s ease;
 }
 
@@ -132,4 +132,192 @@ footer ul li.separator {
     color: #000;
     font-weight: bold;
     pointer-events: none;
+}
+
+/* Bubbles Section */
+.bubbles-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+    margin: 60px auto 0 auto;
+    max-width: 1100px;
+    width: 100%;
+    z-index: 2;
+}
+
+.bubble {
+    position: absolute;
+    width: 240px;
+    min-width: 180px;
+    height: 240px;
+    padding: 24px 18px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: box-shadow 0.3s, background 0.3s, color 0.3s, filter 0.3s;
+    overflow: visible;
+    z-index: 1;
+    background: none !important;
+    border: 2.5px solid #000!important;
+}
+
+.bubble h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+    transition: color 0.3s;
+    z-index: 2;
+}
+
+.bubble p {
+    font-size: 1.02rem;
+    margin: 0;
+    color: #e6f0fa;
+    opacity: 0;
+    max-height: 0;
+    transition: opacity 0.4s, max-height 0.4s;
+    overflow: hidden;
+    z-index: 2;
+    padding: 0 8px;
+    line-height: 1.35;
+    pointer-events: none;
+}
+
+.bubble:hover, .bubble:focus {
+    background: linear-gradient(135deg, #1a3474 80%, #b2d6eb 100%);
+    box-shadow: 0 8px 32px 0 rgba(72,120,242,0.18), 0 0 0 4px #b2d6eb;
+    filter: brightness(1.08) saturate(1.1);
+    z-index: 10;
+}
+
+.bubble:hover h3, .bubble:focus h3 {
+    color: #e6f0fa;
+}
+
+.bubble:hover p, .bubble:focus p {
+    opacity: 1;
+    max-height: 200px;
+    pointer-events: auto;
+}
+
+/* Assign a unique color to each bubble by default, and use the old light blue on hover */
+.bubble-top {
+    background: linear-gradient(135deg, #ffc7c1 80%, #fff0ec 100%) !important;
+}
+
+.bubble-left {
+    background: linear-gradient(135deg, #f5ef7f 80%, #fffbe6 100%) !important;
+}
+
+.bubble-right {
+    background: linear-gradient(135deg, #be3100 80%, #ffb8a1 100%) !important;
+}
+
+/* Responsive for mobile */
+@media (max-width: 900px) {
+    .bubble {
+        width: 80vw;
+        max-width: 320px;
+        height: 160px;
+        min-width: 0;
+        font-size: 1rem;
+    }
+}
+
+/* Triangle Bubbles Layout */
+.bubbles-triangle-wrapper {
+    display: flex;
+    justify-content: flex-end; /* move box to the right */
+    align-items: center;
+    width: 900px; /* thinner */
+    height: 650px;
+    margin: 180px 60px 0 auto; /* more space from top nav */
+    background: #dddcdc;
+    --border: 3px solid #a3cedd;
+    border-radius: 32px;
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.08);
+    position: relative;
+    z-index: 0;
+}
+
+.bubbles-triangle {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    gap: 48px;
+}
+
+.bubble {
+    position: static;
+    width: 210px;
+    min-width: 150px;
+    height: 210px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1a3474 80%, #b2d6eb 100%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 2px #c1cdd1, 0 0 10px #c1cdd1, 0 0 20px rgba(255,255,255,0.3);
+    padding: 24px 18px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    font-family: 'Poppins', Arial, sans-serif;
+    opacity: 0;
+    transform: scale(0.5) translateY(100px);
+    animation: bubble-jump-in 0.8s cubic-bezier(.68,-0.55,.27,1.55) forwards;
+}
+
+.bubble-top, .bubble-left, .bubble-right {
+    left: unset;
+    right: unset;
+    top: unset;
+    bottom: unset;
+    transform: scale(0.5) translateY(100px);
+    z-index: 1;
+    animation-delay: 0s;
+}
+
+@keyframes bubble-jump-in {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) translateY(100px);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.15) translateY(-20px);
+    }
+    80% {
+        transform: scale(0.95) translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@media (max-width: 1200px) {
+    .bubbles-triangle-wrapper {
+        width: 98vw;
+        min-width: 0;
+        height: 75vw;
+        max-width: 99vw;
+        border-radius: 18px;
+    }
+    .bubbles-triangle {
+        width: 85vw;
+        height: 55vw;
+    }
 }
