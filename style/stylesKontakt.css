@@ -256,3 +256,44 @@ footer nav ul li.separator {
         font-size: 1rem;
     }
 }
+
+@media (max-width: 1366px) {
+    .contact-card {
+        max-width: 550px;
+        padding: 40px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .contact-card {
+        max-width: 500px;
+        padding: 35px;
+    }
+    
+    h1 {
+        font-size: 2.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-section {
+        margin-top: 160px;
+        padding: 15px;
+    }
+
+    .contact-card {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .contact-block h3 {
+        font-size: 1.1rem;
+    }
+
+    .contact-block a {
+        font-size: 0.95rem;
+    }
+}

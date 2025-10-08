@@ -166,21 +166,56 @@ p {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1366px) {
     .content {
-        padding: 30px 20px;
-        margin: 0 20px;
+        max-width: 600px;
+        padding: 35px 45px;
     }
-    
+}
+
+@media (max-width: 1024px) {
+    .content {
+        max-width: 500px;
+        padding: 30px 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .maintenance-container {
+        padding: 20px;
+    }
+
+    .content {
+        padding: 25px 30px;
+    }
+
     h1 {
         font-size: 1.8rem;
     }
-    
+
+    #countdown {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .maintenance-container {
+        padding: 15px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
     p {
         font-size: 1rem;
     }
-    
-    .logo img {
-        max-width: 150px;
+
+    #countdown {
+        font-size: 1.6rem;
     }
 }

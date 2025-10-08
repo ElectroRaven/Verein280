@@ -63,6 +63,19 @@ section {
     margin-bottom: 2em;
 }
 
+@media (max-width: 1366px) {
+    .leitbild-content {
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .leitbild-content {
+        max-width: 600px;
+        padding: 30px;
+    }
+}
+
 @media (max-width: 768px) {
     .leitbild-content {
         padding: 20px;
@@ -76,8 +89,22 @@ section {
         font-size: 1.3rem;
     }
 
-    h3 {
-        font-size: 1.1rem;
+    p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .leitbild-content {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
     }
 
     p {

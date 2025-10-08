@@ -239,3 +239,55 @@ footer nav ul li.separator {
         font-size: 1rem;
     }
 }
+
+@media (max-width: 1366px) {
+    .team-grid {
+        max-width: 1000px;
+    }
+    
+    .member-photo {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .team-grid {
+        max-width: 800px;
+        gap: 30px;
+    }
+    
+    .team-member {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-section {
+        margin-top: 160px;
+        padding: 15px;
+    }
+
+    .team-grid {
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .team-member {
+        padding: 20px;
+    }
+
+    .member-photo {
+        width: 100px;
+        height: 100px;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .role {
+        font-size: 0.9rem;
+    }
+}

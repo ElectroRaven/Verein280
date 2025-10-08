@@ -230,6 +230,74 @@ footer ul li.separator {
     }
 }
 
+@media (max-width: 1366px) {
+    .content-box {
+        max-width: 900px;
+    }
+
+    .bubble {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .content-box {
+        max-width: 800px;
+        padding: 35px;
+    }
+
+    .bubble {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-box {
+        max-width: 90%;
+        padding: 30px;
+        height: auto;
+    }
+
+    .bubbles-triangle-wrapper {
+        width: 95%;
+        margin: 150px auto 0;
+    }
+
+    .bubble {
+        width: 180px;
+        height: 180px;
+        padding: 15px;
+    }
+
+    .bubble h3 {
+        font-size: 1.1rem;
+    }
+
+    .bubble p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-box {
+        padding: 20px;
+    }
+
+    .bubbles-triangle {
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+    }
+
+    .bubble {
+        width: 160px;
+        height: 160px;
+        padding: 12px;
+    }
+}
+
 /* Triangle Bubbles Layout */
 .bubbles-triangle-wrapper {
     display: flex;
