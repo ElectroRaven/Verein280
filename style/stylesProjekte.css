@@ -1,3 +1,5 @@
+@import 'shared.css';
+
 body {
     margin: 0;
     padding: 0;
@@ -73,13 +75,13 @@ header {
     font-size: 0.8rem;
 }
 
-/* Projects Section */
-.projects-section {
+/* Services Section */
+.services-section {
     margin-top: 220px;
     padding: 40px;
 }
 
-.projects-container {
+.services-container {
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -92,64 +94,53 @@ h1 {
     animation: fadeIn 1s ease-out;
 }
 
-.project-grid {
+.services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
-.project-card {
+.service-card {
     background: #a4cede;
     border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-    transform: translateY(40px);
-    opacity: 0;
-    animation: slideUp 0.8s ease-out forwards;
-    border: 2px solid #000;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #1a3474;
 }
 
-.project-card:nth-child(2) {
+.service-card:nth-child(2) {
     animation-delay: 0.2s;
 }
 
-.project-card:nth-child(3) {
+.service-card:nth-child(3) {
     animation-delay: 0.4s;
 }
 
-.project-card:hover {
+.service-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 40px rgba(0,0,0,0.15);
 }
 
-.project-content {
-    text-align: center;
+.service-icon {
+    margin-bottom: 20px;
 }
 
-.project-content h2 {
+.service-icon svg {
+    width: 64px;
+    height: 64px;
+}
+
+h2 {
     color: #1a3474;
     font-size: 1.8rem;
-    margin: 0 0 10px 0;
-}
-
-.project-content h3 {
-    color: #333;
-    font-size: 1.4rem;
     margin: 0 0 20px 0;
 }
 
-.status {
-    display: inline-block;
-    padding: 8px 16px;
-    background: #1a3474;
-    color: #fff;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.service-content p {
+    color: #333;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
 }
 
 /* Footer */
@@ -224,95 +215,71 @@ footer nav ul li.separator {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    header {
-        right: 10px;
+    .services-section {
+        margin-top: 180px;
+        padding: 20px;
     }
 
-    .logo img {
-        max-height: 100px;
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 40px;
     }
 
-    .top-nav {
-        width: 90%;
-        padding: 10px 15px;
-        top: 20px;
+    .service-card {
+        padding: 30px 20px;
     }
 
-    .top-nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
+    h2 {
+        font-size: 1.5rem;
     }
 
-    .top-nav ul li a {
-        font-size: 0.9rem;
-        padding: 5px 10px;
-    }
-
-    footer {
-        position: relative;
-        margin-top: 40px;
-        padding: 15px 0;
-    }
-
-    /* Add more spacing at the bottom of main content */
-    main section {
-        margin-bottom: 80px;
-    }
-}
-
-@media (max-width: 480px) {
-    .logo img {
-        max-height: 80px;
-    }
-
-    .top-nav {
-        top: 15px;
-        padding: 8px 12px;
-        width: 95%;
-    }
-
-    .top-nav ul {
-        gap: 10px;
-    }
-
-    .top-nav ul li a {
-        font-size: 0.8rem;
-        padding: 4px 8px;
-    }
-
-    .top-nav ul li.separator {
-        font-size: 0.7rem;
-    }
-
-    /* Increase spacing for content */
-    main section {
-        margin-top: 140px;
-        padding: 15px;
-        margin-bottom: 60px;
+    .service-content p {
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 1366px) {
-    .projects-container {
+    .services-container {
         max-width: 1000px;
     }
     
-    .project-card {
-        padding: 25px;
+    .service-card {
+        padding: 35px 25px;
     }
 }
 
 @media (max-width: 1024px) {
-    .projects-container {
+    .top-nav {
+        width: 90%;
+    }
+    
+    .services-container {
         max-width: 800px;
     }
     
-    .project-content h2 {
-        font-size: 1.6rem;
+    .service-icon svg {
+        width: 56px;
+        height: 56px;
     }
-    
-    .project-content h3 {
+}
+
+@media (max-width: 480px) {
+    .services-section {
+        margin-top: 160px;
+        padding: 15px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 10px;
+    }
+
+    .service-card {
+        padding: 15px;
+    }
+
+    h2 {
         font-size: 1.3rem;
     }
 }
