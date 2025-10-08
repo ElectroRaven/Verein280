@@ -1,3 +1,5 @@
+@import 'shared.css';
+
 body {
     margin: 0;
     padding: 0;
@@ -94,22 +96,16 @@ h1 {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
 .service-card {
     background: #a4cede;
     border-radius: 20px;
-    padding: 40px 30px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-    transform: translateY(40px);
-    opacity: 0;
-    animation: slideUp 0.8s ease-out forwards;
-    border: 2px solid #000;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 20px;
     text-align: center;
+    border: 2px solid #1a3474;
 }
 
 .service-card:nth-child(2) {
@@ -274,12 +270,13 @@ footer nav ul li.separator {
     }
 
     .services-grid {
+        grid-template-columns: 1fr;
         gap: 25px;
         padding: 10px;
     }
 
     .service-card {
-        padding: 25px 15px;
+        padding: 15px;
     }
 
     h2 {
