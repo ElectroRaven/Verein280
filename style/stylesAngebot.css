@@ -219,72 +219,26 @@ footer nav ul li.separator {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    header {
-        right: 10px;
+    .services-section {
+        margin-top: 180px;
+        padding: 20px;
     }
 
-    .logo img {
-        max-height: 100px;
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 40px;
     }
 
-    .top-nav {
-        width: 90%;
-        padding: 10px 15px;
-        top: 20px;
+    .service-card {
+        padding: 30px 20px;
     }
 
-    .top-nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
+    h2 {
+        font-size: 1.5rem;
     }
 
-    .top-nav ul li a {
-        font-size: 0.9rem;
-        padding: 5px 10px;
-    }
-
-    footer {
-        position: relative;
-        margin-top: 40px;
-        padding: 15px 0;
-    }
-
-    /* Add more spacing at the bottom of main content */
-    main section {
-        margin-bottom: 80px;
-    }
-}
-
-@media (max-width: 480px) {
-    .logo img {
-        max-height: 80px;
-    }
-
-    .top-nav {
-        top: 15px;
-        padding: 8px 12px;
-        width: 95%;
-    }
-
-    .top-nav ul {
-        gap: 10px;
-    }
-
-    .top-nav ul li a {
-        font-size: 0.8rem;
-        padding: 4px 8px;
-    }
-
-    .top-nav ul li.separator {
-        font-size: 0.7rem;
-    }
-
-    /* Increase spacing for content */
-    main section {
-        margin-top: 140px;
-        padding: 15px;
-        margin-bottom: 60px;
+    .service-content p {
+        font-size: 1rem;
     }
 }
 
@@ -310,5 +264,25 @@ footer nav ul li.separator {
     .service-icon svg {
         width: 56px;
         height: 56px;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-section {
+        margin-top: 160px;
+        padding: 15px;
+    }
+
+    .services-grid {
+        gap: 25px;
+        padding: 10px;
+    }
+
+    .service-card {
+        padding: 25px 15px;
+    }
+
+    h2 {
+        font-size: 1.3rem;
     }
 }

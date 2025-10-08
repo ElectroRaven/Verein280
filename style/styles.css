@@ -20,27 +20,36 @@ header {
     position: absolute;
     top: 0;
     right: 20px;
+    z-index: 100;
 }
 
 .logo img {
-    max-height: 200px;
+    max-height: 150px; /* Reduced from 200px */
     width: auto;
 }
 
 .top-nav {
-    position: absolute;
-    top: calc(50% - 220px);
-    left: 550px; /* shifted further right from 425px */
-    font-family: 'Poppins', Arial, sans-serif;
-    z-index: 10;
+    position: fixed; /* Changed from absolute */
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%); /* Centers the nav */
+    background: rgba(255, 255, 255, 0.95);
+    padding: 15px 40px;
+    border-radius: 50px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 90;
+    width: auto;
 }
 
 .top-nav ul {
     list-style-type: none;
-    margin: -100px;
-    padding: 1;
+    margin: 0;
+    padding: 0;
     display: flex;
     gap: 30px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .top-nav ul li a {
@@ -333,8 +342,9 @@ footer ul li.separator {
     }
 
     .top-nav {
-        top: 15px;
-        padding: 8px 12px;
+        width: 95%;
+        padding: 8px 15px;
+        top: 20px;
     }
 
     .top-nav ul {
@@ -342,8 +352,8 @@ footer ul li.separator {
     }
 
     .top-nav ul li a {
-        font-size: 0.8rem;
-        padding: 4px 8px;
+        font-size: 0.9rem;
+        padding: 5px 10px;
     }
 
     .content-box {

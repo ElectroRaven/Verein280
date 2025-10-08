@@ -1,0 +1,137 @@
+/* Common Header, Navigation and Footer styles */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 100;
+    padding: 0;
+}
+
+.logo img {
+    max-height: 80px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.top-nav {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    min-width: 320px;
+    max-width: 90%;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 8px 15px;
+    border-radius: 25px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 90;
+}
+
+.top-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+}
+
+.top-nav ul li a {
+    text-decoration: none;
+    color: #1a3474;
+    font-size: 0.9rem;
+    padding: 5px 8px;
+    border-radius: 15px;
+    white-space: nowrap;
+}
+
+main {
+    margin-top: 120px;
+    flex: 1;
+}
+
+footer {
+    position: relative;
+    width: 100%;
+    padding: 15px 0;
+    margin-top: auto;
+}
+
+footer ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+footer ul li {
+    list-style: none;
+}
+
+footer ul li a {
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .logo img {
+        max-height: 100px;
+    }
+    
+    .top-nav {
+        top: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo img {
+        max-height: 90px;
+    }
+
+    .top-nav {
+        padding: 10px 20px;
+    }
+
+    .top-nav ul li a {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        max-height: 60px;
+    }
+
+    .top-nav {
+        top: 5px;
+        padding: 5px 10px;
+    }
+
+    .top-nav ul {
+        gap: 8px;
+    }
+
+    .top-nav ul li a {
+        font-size: 0.8rem;
+        padding: 4px 6px;
+    }
+
+    main {
+        margin-top: 100px;
+    }
+}
