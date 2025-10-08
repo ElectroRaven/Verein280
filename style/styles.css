@@ -278,6 +278,37 @@ footer ul li.separator {
     .bubble p {
         font-size: 0.9rem;
     }
+
+    .logo img {
+        max-height: 100px; /* Smaller logo for tablets */
+    }
+
+    .top-nav {
+        width: 90%;
+        padding: 10px 15px;
+        top: 20px; /* Move nav down slightly */
+    }
+
+    .top-nav ul {
+        flex-wrap: wrap; /* Allow items to wrap */
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .top-nav ul li a {
+        font-size: 0.9rem;
+        padding: 5px 10px;
+    }
+
+    footer {
+        position: relative; /* Change from fixed to relative */
+        margin-top: 40px;
+        padding: 15px 0;
+    }
+
+    footer ul li a {
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -295,6 +326,28 @@ footer ul li.separator {
         width: 160px;
         height: 160px;
         padding: 12px;
+    }
+
+    .logo img {
+        max-height: 80px; /* Even smaller logo for phones */
+    }
+
+    .top-nav {
+        top: 15px;
+        padding: 8px 12px;
+    }
+
+    .top-nav ul {
+        gap: 10px;
+    }
+
+    .top-nav ul li a {
+        font-size: 0.8rem;
+        padding: 4px 8px;
+    }
+
+    .content-box {
+        margin-bottom: 60px; /* Add space for footer */
     }
 }
 

@@ -235,25 +235,72 @@ footer nav ul li.separator {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .contact-section {
-        margin-top: 180px;
-        padding: 20px;
+    header {
+        right: 10px;
     }
 
-    .contact-card {
-        padding: 30px;
+    .logo img {
+        max-height: 100px;
     }
 
-    h1 {
-        font-size: 2.5rem;
+    .top-nav {
+        width: 90%;
+        padding: 10px 15px;
+        top: 20px;
     }
 
-    h2 {
-        font-size: 1.2rem;
+    .top-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
     }
 
-    .contact-block a {
-        font-size: 1rem;
+    .top-nav ul li a {
+        font-size: 0.9rem;
+        padding: 5px 10px;
+    }
+
+    footer {
+        position: relative;
+        margin-top: 40px;
+        padding: 15px 0;
+    }
+
+    /* Add more spacing at the bottom of main content */
+    main section {
+        margin-bottom: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        max-height: 80px;
+    }
+
+    .top-nav {
+        top: 15px;
+        padding: 8px 12px;
+        width: 95%;
+    }
+
+    .top-nav ul {
+        gap: 10px;
+    }
+
+    .top-nav ul li a {
+        font-size: 0.8rem;
+        padding: 4px 8px;
+    }
+
+    .top-nav ul li.separator {
+        font-size: 0.7rem;
+    }
+
+    /* Increase spacing for content */
+    main section {
+        margin-top: 140px;
+        padding: 15px;
+        margin-bottom: 60px;
     }
 }
 
@@ -272,28 +319,5 @@ footer nav ul li.separator {
     
     h1 {
         font-size: 2.7rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .contact-section {
-        margin-top: 160px;
-        padding: 15px;
-    }
-
-    .contact-card {
-        padding: 25px;
-    }
-
-    h1 {
-        font-size: 2.2rem;
-    }
-
-    .contact-block h3 {
-        font-size: 1.1rem;
-    }
-
-    .contact-block a {
-        font-size: 0.95rem;
     }
 }

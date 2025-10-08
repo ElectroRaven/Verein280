@@ -92,6 +92,42 @@ section {
     p {
         font-size: 1rem;
     }
+
+    header {
+        right: 10px;
+    }
+
+    .logo img {
+        max-height: 100px;
+    }
+
+    .top-nav {
+        width: 90%;
+        padding: 10px 15px;
+        top: 20px;
+    }
+
+    .top-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .top-nav ul li a {
+        font-size: 0.9rem;
+        padding: 5px 10px;
+    }
+
+    footer {
+        position: relative;
+        margin-top: 40px;
+        padding: 15px 0;
+    }
+
+    /* Add more spacing at the bottom of main content */
+    main section {
+        margin-bottom: 80px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -109,5 +145,35 @@ section {
 
     p {
         font-size: 0.95rem;
+    }
+
+    .logo img {
+        max-height: 80px;
+    }
+
+    .top-nav {
+        top: 15px;
+        padding: 8px 12px;
+        width: 95%;
+    }
+
+    .top-nav ul {
+        gap: 10px;
+    }
+
+    .top-nav ul li a {
+        font-size: 0.8rem;
+        padding: 4px 8px;
+    }
+
+    .top-nav ul li.separator {
+        font-size: 0.7rem;
+    }
+
+    /* Increase spacing for content */
+    main section {
+        margin-top: 140px;
+        padding: 15px;
+        margin-bottom: 60px;
     }
 }
