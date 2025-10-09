@@ -217,8 +217,16 @@ footer ul li a:hover {
     top: 0;
     right: 0;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     margin-top: 15px;
+    z-index: 50;
+  }
+
+  .logo img {
+    max-height: 90px;
+    width: auto;
   }
 
   .top-nav {
@@ -227,7 +235,17 @@ footer ul li a:hover {
     left: 0;
     transform: none;
     margin-top: 10px;
-    width: 90%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  }
+
+  .top-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
   }
 }
 
