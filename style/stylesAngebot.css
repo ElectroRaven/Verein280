@@ -9,34 +9,43 @@ body {
 }
 
 /* Header & Navigation */
+:root{
+  --logo-h: 90px; /* anpassen falls Logo anders */
+  --nav-gap: 16px;
+}
+
 header {
     position: fixed;
     top: 10px;
     right: 10px;
-    z-index: 100;
+    z-index: 11000; /* höher als .top-nav */
+    height: var(--logo-h);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .logo img {
-    max-height: 170px;
+    height: var(--logo-h);
+    max-width: 40vw;
     width: auto;
-    transition: transform 0.3s ease;
-}
-
-.logo img:hover {
-    transform: scale(1.05);
+    object-fit: contain;
 }
 
 .top-nav {
     position: fixed;
-    top: 40px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 90;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 15px 40px;
-    border-radius: 50px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    animation: slideDown 0.8s ease-out;
+    top: calc(var(--logo-h) + var(--nav-gap));
+    z-index: 10900; /* kleiner als header */
+    width: 95%;
+    max-width: 920px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    background: rgba(255,255,255,0.95);
+    padding: 8px 12px;
+    border-radius: 40px;
 }
 
 .top-nav ul {
@@ -70,7 +79,7 @@ header {
 
 /* Main Content */
 main {
-    margin-top: 220px;
+    margin-top: calc(var(--logo-h) + 96px);
     flex: 1;
 }
 
@@ -197,18 +206,8 @@ footer ul li a:hover {
 
 /* Responsive Design */
 @media screen and (max-width: 1024px) {
-    .logo img {
-        max-height: 140px;
-    }
-
-    .services-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 25px;
-    }
-
-    h1 {
-        font-size: 2.2rem;
-    }
+    :root{ --logo-h:80px; }
+    main{ margin-top: calc(var(--logo-h) + 90px); }
 }
 
 @media screen and (max-width: 900px) {
@@ -251,6 +250,10 @@ footer ul li a:hover {
 
 
 @media screen and (max-width: 768px) {
+    :root{ --logo-h:72px; }
+    .top-nav{ top: calc(var(--logo-h) + 12px); }
+    main{ margin-top: calc(var(--logo-h) + 82px); }
+
     .logo img {
         max-height: 100px;
     }
@@ -289,6 +292,11 @@ footer ul li a:hover {
 }
 
 @media screen and (max-width: 480px) {
+    :root{ --logo-h:56px; }
+    header{ right:8px; }
+    .top-nav{ top: calc(var(--logo-h) + 10px); padding:6px 8px; border-radius:32px; }
+    main{ margin-top: calc(var(--logo-h) + 72px); }
+
     .logo img {
         max-height: 80px;
     }
