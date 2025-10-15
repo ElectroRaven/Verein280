@@ -152,6 +152,23 @@ h1 {
     letter-spacing: 1px;
 }
 
+/* Ensure status links keep the same color (no violet visited state) */
+.project-content .status a,
+.project-content .status a:visited,
+.project-content .status a:hover,
+.project-content .status a:focus {
+  color: inherit;            /* use surrounding text color */
+  text-decoration: none;     /* remove underline if present */
+  outline: none;             /* keep focus styling if you add custom focus later */
+}
+
+/* optional: give .status itself a clear appearance */
+.project-content .status {
+  display: inline-block;
+  color: inherit;
+  font-weight: 600;
+}
+
 /* Footer */
 footer {
     position: fixed;
