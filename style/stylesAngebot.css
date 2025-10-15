@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
+    color: #000;
     display: flex;
     flex-direction: column;
     font-family: 'Poppins', sans-serif;
@@ -59,7 +60,7 @@ header {
 
 .top-nav ul li a {
     text-decoration: none;
-    color: #1a3474;
+    color: #000;
     font-weight: bold;
     font-size: 1.2rem;
     transition: all 0.3s ease;
@@ -91,7 +92,7 @@ main {
 }
 
 h1 {
-    color: #1a3474;
+    color: #000;
     text-align: center;
     margin-bottom: 40px;
     font-size: 2.5rem;
@@ -103,7 +104,7 @@ h1 {
 /* Animated gradient headline + underline */
 .services-section h1 {
     /* keep existing appearance but make it animated */
-    background: linear-gradient(90deg, #1a3474 0%, #2f5f9b 45%, #6fb1d9 100%);
+    background: linear-gradient(90deg, #000 0%, #000 45%, #000 100%);
     background-size: 200% 100%;
     -webkit-background-clip: text;
     background-clip: text;
@@ -121,7 +122,7 @@ h1 {
     display: block;
     height: 6px;
     width: 0%;
-    background: #1a3474;
+    background: #000;
     border-radius: 6px;
     margin: 12px auto 0;
     animation: underline-grow 700ms 220ms cubic-bezier(.2,.9,.3,1) forwards;
@@ -149,7 +150,7 @@ h1 {
     left: 20px;
     width: 44px;
     height: 6px;
-    background: #1a3474;
+    background: #000;
     border-radius: 6px;
     transform-origin: left center;
     opacity: 0;
@@ -189,7 +190,7 @@ h1 {
         animation: none !important;
         transition: none !important;
     }
-    .services-section h1 { color: #1a3474; -webkit-background-clip: unset; background: none; }
+    .services-section h1 { color: #000; -webkit-background-clip: unset; background: none; }
 }
 
 /* ==== end animations ==== */
@@ -262,7 +263,7 @@ footer ul {
 }
 
 footer ul li a {
-    color: #1a3474;
+    color: #000;
     text-decoration: none;
     font-size: 1rem;
     transition: color 0.3s ease;
