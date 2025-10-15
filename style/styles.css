@@ -11,13 +11,14 @@ body {
 /* ===== cleaner card + header/nav overrides (replace previous heavy styles) ===== */
 
 :root {
-  --brand-dark: #1a3474;
+  --brand-dark: #000000;
   --brand-light: #a4cede;
   --page-bg: #fffeef;
   --card-bg: #ffffff;
   --card-border: rgba(26,52,116,0.06);
   --logo-h: 90px;
   --nav-gap: 16px;
+  --text-color: #000000;
 }
 
 /* header/logo (keeps logo right) */
@@ -229,7 +230,7 @@ header {
 
 .top-nav ul li a {
     text-decoration: none;
-    color: #1a3474;
+    color: #000000;
     font-weight: bold;
     font-size: 1.2rem;
     transition: all 0.3s ease;
@@ -238,12 +239,12 @@ header {
 }
 
 .top-nav ul li a:hover {
-    background: #1a3474;
+    background: #d1d1d1;
     color: #fff;
 }
 
 .top-nav ul li.separator {
-    color: #a4cede;
+    color: #000000;
     font-size: 0.8rem;
 }
 
@@ -261,7 +262,7 @@ main {
 }
 
 h1 {
-    color: #1a3474;
+    color: #000000;
     text-align: center;
     margin-bottom: 40px;
     font-size: 2.5rem;
@@ -448,7 +449,7 @@ footer ul li a:hover {
 
 /* color vars for new accents */
 :root {
-  --accent-dark: #1a3474;
+  --accent-dark: #000000;
   --accent-light: #a4cede;
   --h1-grad: linear-gradient(90deg, #1a3474 0%, #3b6fb8 45%, #6fb1d9 100%);
 }
@@ -515,6 +516,25 @@ body {
   transform-origin: left center;
   opacity: 0;
   animation: badge-pop 500ms 500ms cubic-bezier(.2,.9,.3,1) forwards;
+}
+
+/* make animated bars (h1 underline + card badge) black */
+.services-section h1::after {
+  background: #000 !important;
+}
+
+.service-card::before {
+  background: #000 !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* Icons in den Service-Cards schwarz machen */
+.service-icon { color: #000 !important; }
+.service-icon svg,
+.service-icon svg * {
+  fill: #000 !important;
+  stroke: #000 !important;
+  color: #000 !important;
 }
 
 /* Keyframes */
@@ -696,3 +716,29 @@ body {
         height: 48px;
     }
 }
+
+/* Make site text black */
+:root { --text-color: #000000; }
+
+body {
+  color: var(--text-color);
+}
+
+/* Override components that set other colors */
+.services-section h1 {
+  color: var(--text-color) !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+}
+
+.top-nav ul li a,
+.service-card h2,
+.service-card p,
+footer ul li a,
+a {
+  color: var(--text-color) !important;
+}
+
+/* Ensure SVG icons keep their fills (don't force color on svg elements) */
+svg { color: inherit; }
