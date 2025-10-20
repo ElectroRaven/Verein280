@@ -14,74 +14,65 @@ body {
 /* Header & Logo */
 header {
     position: fixed;
-    top: 12px;
-    right: 20px;
-    z-index: 12000;
-    height: var(--logo-h-desktop);
+    top: 10px;
+    right: 10px;
+    z-index: 11000; /* höher als .top-nav */
+    height: var(--logo-h);
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    pointer-events: none;
 }
 
-header .logo {
-    pointer-events: auto;
-}
-
-header .logo img {
-    height: var(--logo-h-desktop);
+.logo img {
+    height: var(--logo-h);
+    max-width: 40vw;
     width: auto;
-    max-width: 35vw;
-    display: block;
     object-fit: contain;
 }
 
-/* Top navigation - centered, below/inline area of logo */
 .top-nav {
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
-    top: calc(var(--logo-h-desktop) + var(--nav-gap));
-    z-index: 11000;
-    width: min(920px, 94%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.98);
-    padding: 8px 14px;
-    border-radius: 32px;
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+    top: calc(var(--logo-h) + var(--nav-gap));
+    z-index: 10900; /* kleiner als header */
+    width: 95%;
+    max-width: 920px;
     box-sizing: border-box;
-    white-space: nowrap;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
+    display: flex;
+    justify-content: center;
+    background: rgba(255,255,255,0.95);
+    padding: 8px 12px;
+    border-radius: 40px;
 }
 
 .top-nav ul {
+    list-style: none;
     margin: 0;
     padding: 0;
-    list-style: none;
     display: flex;
-    gap: 22px;
+    gap: 30px;
     align-items: center;
-    justify-content: center;
 }
 
 .top-nav ul li a {
-    color: var(--brand-dark);
     text-decoration: none;
-    font-weight: 700;
-    font-size: 1.05rem;
-    padding: 6px 12px;
-    display: inline-flex;
-    align-items: center;
-    height: calc(var(--logo-h-desktop) - 12px);
-    border-radius: 20px;
+    color: #000;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 25px;
+}
+
+.top-nav ul li a:hover {
+    background: #d1d1d1;
+    color: #fff;
 }
 
 .top-nav ul li.separator {
-    color: var(--brand-light);
-    font-size: 0.9rem;
+    color: #a4cede;
+    font-size: 0.8rem;
 }
 
 /* Main spacing - reserve header+nav */
@@ -167,26 +158,30 @@ main {
 footer {
     position: relative;
     width: 100%;
-    padding: 18px 12px;
+    padding: 20px 0;
     background: rgba(255, 255, 255, 0.95);
-    box-sizing: border-box;
     margin-top: 40px;
 }
 
-footer nav ul {
+footer ul {
     list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
     display: flex;
-    gap: 16px;
     justify-content: center;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
-footer nav ul li a {
-    color: var(--brand-dark);
+footer ul li a {
+    color: #000;
     text-decoration: none;
-    font-weight: 400;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+footer ul li a:hover {
+    color: #a4cede;
 }
 
 /* Animations */
@@ -202,89 +197,191 @@ footer nav ul li a {
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
-    :root {
-        --logo-h-desktop: var(--logo-h-tablet);
-    }
+@media screen and (max-width: 1024px) {
+    :root{ --logo-h:80px; }
+    main{ margin-top: calc(var(--logo-h) + 90px); }
+}
 
-    main {
-        margin-top: calc(var(--logo-h-desktop) + 88px);
+@media screen and (max-width: 900px) {
+  header {
+    position: relative;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    z-index: 50;
+  }
+
+  .logo img {
+    max-height: 90px;
+    width: auto;
+  }
+
+  .top-nav {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    margin-top: 10px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  }
+
+  .top-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+    :root{ --logo-h:72px; }
+    .top-nav{ top: calc(var(--logo-h) + 12px); }
+    main{ margin-top: calc(var(--logo-h) + 82px); }
+
+    .logo img {
+        max-height: 100px;
     }
 
     .top-nav {
-        top: calc(var(--logo-h-desktop) + 14px);
+        padding: 12px 25px;
+        width: 90%;
+    }
+
+    .top-nav ul {
+        gap: 15px;
+    }
+
+    .top-nav ul li a {
+        font-size: 1rem;
+        padding: 6px 12px;
+    }
+
+    main {
+        margin-top: 160px;
+    }
+
+    .services-section {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .service-icon svg {
+        width: 56px;
+        height: 56px;
     }
 }
 
-@media (max-width: 768px) {
-    :root {
-        --logo-h-desktop: var(--logo-h-tablet);
-    }
+@media screen and (max-width: 480px) {
+    :root{ --logo-h:56px; }
+    header{ right:8px; }
+    .top-nav{ top: calc(var(--logo-h) + 10px); padding:6px 8px; border-radius:32px; }
+    main{ margin-top: calc(var(--logo-h) + 72px); }
 
-    header .logo img {
-        height: var(--logo-h-tablet);
+    .logo img {
+        max-height: 80px;
     }
 
     .top-nav {
-        top: calc(var(--logo-h-tablet) + 12px);
-        width: 92%;
-        padding: 8px 12px;
-        border-radius: 30px;
+        padding: 8px 15px;
+        top: 30px;
+    }
+
+    .top-nav ul {
+        gap: 10px;
+    }
+
+    .top-nav ul li a {
+        font-size: 0.9rem;
+        padding: 5px 10px;
     }
 
     main {
-        margin-top: calc(var(--logo-h-tablet) + 84px);
+        /* margin-top: 130px; */
+        margin-top: clamp(120px, 20vh, 220px);
     }
 
-    .contact-info {
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+    }
+
+    .services-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 10px;
     }
 
-    .contact-card {
-        padding: 28px;
-        max-width: 620px;
-    }
-}
-
-@media (max-width: 480px) {
-    :root {
-        --logo-h-desktop: var(--logo-h-mobile);
-    }
-
-    header .logo img {
-        height: var(--logo-h-mobile);
-    }
-
-    .top-nav {
-        top: calc(var(--logo-h-mobile) + 10px);
-        width: 95%;
-        padding: 6px 10px;
-        border-radius: 26px;
-    }
-
-    main {
-        margin-top: calc(var(--logo-h-mobile) + 72px);
-    }
-
-    .contact-card {
+    .service-card {
         padding: 20px;
-        width: 95%;
     }
 
-    .organization-info h1 {
-        font-size: 1.6rem;
+    .service-card h2 {
+        font-size: 1.3rem;
+    }
+
+    .service-icon svg {
+        width: 48px;
+        height: 48px;
     }
 }
 
-/* Accessibility / fallback: respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-    .contact-card {
-        animation: none !important;
-        transition: none !important;
-    }
+/* Override: center first h1 and force black for texts & animated parts */
+.services-section h1 {
+  color: #000 !important;
+  text-align: center !important; /* ensure centered */
+}
 
-    .top-nav,
-    header {
-        transition: none !important;
-    }
+/* animated underline (h1) -> black */
+.services-section h1::after {
+  background: #000 !important;
+}
+
+/* animated badge on cards -> black */
+.service-card::before {
+  background: #000 !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12) !important;
+}
+
+/* make general text black */
+body,
+.services-section h1,
+.service-card h2,
+.service-card p,
+.top-nav ul li a,
+footer ul li a {
+  color: #000 !important;
+}
+
+/* icons: fill/stroke -> black */
+.service-icon svg,
+.service-icon svg * {
+  fill: #000 !important;
+  stroke: #000 !important;
+  color: #000 !important;
+}
+
+/* ensure animated gradients fallback to black where applied */
+@keyframes h1-grad-shift { /* keep animation but ensure visible on black text fallback */ }
+
+/* respect reduced motion (no change) */
+@media (prefers-reduced-motion: reduce) {
+  .services-section h1,
+  .services-section h1::after,
+  .service-card,
+  .service-card::before {
+    animation: none !important;
+    transition: none !important;
+  }
 }
