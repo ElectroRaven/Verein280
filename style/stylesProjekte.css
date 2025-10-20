@@ -179,9 +179,97 @@ footer ul li a:hover {
     color: #a4cede;
 }
 
-/* Animations (same as Angebot) */
-@keyframes h1-entrance { from{ opacity:0; transform:translateY(12px) } to{ opacity:1; transform:none } }
-@keyframes card-pop { from{ opacity:0; transform:translateY(22px) } to{ opacity:1; transform:none } }
+/* ==== Animations like Angebot ==== */
+
+/* Animated gradient headline + underline */
+.projects-container h1 {
+  background: linear-gradient(90deg, #000 0%, #000 45%, #000 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: block;
+  margin: 0 auto 48px;
+  animation: h1-entrance 700ms cubic-bezier(.2,.9,.3,1) both,
+             h1-grad-shift 6s linear infinite;
+  position: relative;
+}
+
+/* decorative underline that grows */
+.projects-container h1::after {
+  content: "";
+  display: block;
+  height: 6px;
+  width: 0%;
+  background: #000;
+  border-radius: 6px;
+  margin: 12px auto 0;
+  animation: underline-grow 700ms 220ms cubic-bezier(.2,.9,.3,1) forwards;
+}
+
+/* Project card entrance + stagger */
+.project-card {
+  position: relative;
+  transform: translateY(18px) scale(.995);
+  opacity: 0;
+  animation: card-pop 620ms cubic-bezier(.2,.9,.3,1) forwards;
+  will-change: transform, opacity;
+}
+
+/* stagger delays */
+.project-grid .project-card:nth-child(1) { animation-delay: 260ms; }
+.project-grid .project-card:nth-child(2) { animation-delay: 420ms; }
+.project-grid .project-card:nth-child(3) { animation-delay: 580ms; }
+
+/* small accent badge (grows) */
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  width: 44px;
+  height: 6px;
+  background: #000;
+  border-radius: 6px;
+  transform-origin: left center;
+  opacity: 0;
+  transform: scaleX(0);
+  animation: badge-pop 520ms 480ms cubic-bezier(.2,.9,.3,1) forwards;
+}
+
+/* keyframes */
+@keyframes h1-entrance {
+  from { opacity: 0; transform: translateY(12px) scale(.995); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes h1-grad-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes underline-grow {
+  from { width: 0%; opacity: 0; }
+  to   { width: 48%; opacity: 1; }
+}
+@keyframes card-pop {
+  from { opacity: 0; transform: translateY(18px) scale(.995); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes badge-pop {
+  from { transform: scaleX(0); opacity: 0; }
+  to   { transform: scaleX(1); opacity: 1; }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .projects-container h1,
+  .projects-container h1::after,
+  .project-card,
+  .project-card::before {
+    animation: none !important;
+    transition: none !important;
+  }
+}
 
 /* Responsive */
 @media screen and (max-width: 1024px) {
