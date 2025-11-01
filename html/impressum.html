@@ -6,19 +6,33 @@
     <title>Verein280 - Impressum</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        body {
+        :root{
+            --brand-dark:#000000;
+            --accent:#000000;
+            --page-bg:#ffffff;
+            --content-max:1100px;
+            --logo-h:90px;
+        }
+
+        /* Base */
+        *{box-sizing:border-box}
+        html,body{height:100%}
+        body{
             margin: 0;
             padding: 0;
             font-family: 'Poppins', Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #fff;
+            background-color: var(--page-bg);
+            display:flex;
+            flex-direction:column;
+            min-height:100vh;
         }
 
         .nav-simple {
-            padding: 20px;
+            padding: 18px 20px;
             background-color: #f8f8f8;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #e6e6e6;
         }
 
         .nav-simple a {
@@ -27,60 +41,30 @@
             font-weight: 500;
         }
 
-        .nav-simple a:hover {
-            text-decoration: underline;
-        }
+        .nav-simple a:hover { text-decoration: underline; }
 
-        .impressum-content {
-            max-width: 800px;
+        main.impressum-content {
+            max-width: var(--content-max);
             margin: 0 auto;
             padding: 40px 20px;
+            flex: 1 0 auto; /* ensures footer sits at bottom */
+            width:100%;
         }
 
-        h1 {
-            color: #1a3474;
-            font-size: 2rem;
-            margin-bottom: 1.5em;
-        }
+        h1 { color: var(--brand-dark); font-size: 2rem; margin-bottom: 1.2em; }
+        h2 { color: var(--brand-dark); font-size: 1.3rem; margin: 0 0 0.6em; }
 
-        h2 {
-            color: #1a3474;
-            font-size: 1.5rem;
-            margin: 1em 0 0.5em;
-        }
+        .org-subtitle { color: #666; font-style: italic; margin-bottom:0.6em; }
 
-        .contact-info {
-            margin: 2em 0;
-        }
+        a { color: var(--brand-dark); text-decoration: none; }
+        a:hover{ text-decoration: underline; }
 
-        .contact-info p {
-            margin: 0.5em 0;
-        }
-
-        .org-name {
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-
-        .org-subtitle {
-            color: #666;
-            font-style: italic;
-        }
-
-        a {
-            color: #1a3474;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
+        /* Grid for boxes */
         .info-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 24px;
-            align-items: stretch;
+            align-items: stretch; 
             margin-bottom: 20px;
         }
 
@@ -100,47 +84,86 @@
             font-weight:700;
             font-size:1.15rem;
             margin-bottom:6px;
-            color:#1a3474;
+            color:var(--brand-dark);
         }
         .info-box p{ margin:0.45em 0; color:#222; }
 
         .developer-box{
-            margin:50px auto 0;
-            padding:14px 18px;
-            border-radius:12px;
-            background:#f6f9fb;
-            border:1px solid rgba(26,52,116,0.06);
-            box-shadow:0 8px 20px rgba(26,52,116,0.04);
-            max-width:420px;
-            width:100%;
-            box-sizing:border-box;
-            clear: both;
-            z-index:1;
+          margin:28px auto 0;
+          padding:20px 22px;
+          border-radius:12px;
+          background:#f6f9fb;
+          border:1px solid rgba(26,52,116,0.06);
+          box-shadow:0 8px 24px rgba(26,52,116,0.04);
+          max-width:720px;
+          width:100%;
+          box-sizing:border-box;
 
-            display:flex;
-            flex-wrap:wrap;
-            gap:12px;
-            align-items:center;
-            justify-content:flex-start;
+          display:flex;
+          flex-direction:column;
+          gap:8px;
+          align-items:flex-start;
         }
-        .developer-box p{ margin:0; }
 
+        .dev-left,
+        .dev-right {
+          display:block;
+          width:100%;
+        }
+        .dev-left p,
+        .dev-right p { margin:0; color:#222; }
+
+        .developer-box a{ color:var(--brand-dark); text-decoration:none; }
+        .developer-box a:hover{ text-decoration:underline; }
+
+        @media (min-width: 761px){
+          .dev-right{ display:block; text-align:left; justify-content:flex-start; align-items:flex-start; }
+        }
+        @media (max-width:760px){
+          .developer-box{ padding:16px; }
+          .dev-right{ text-align:left; }
+        }
+
+        @media (min-width: 761px){
+            .dev-right{ display:flex; gap:18px; justify-content:flex-end; align-items:center; }
+        }
+
+        @media (max-width:760px){
+            .developer-box{ padding:16px; }
+            .dev-right{ text-align:center; }
+        }
+
+        @media (max-width: 1024px) {
+            main.impressum-content { padding: 34px 18px; }
+            .info-grid { gap:20px; grid-template-columns: 1fr; }
+            .developer-box { justify-content: center; }
+            .developer-box { max-width:560px; }
+        }
+
+        @media (max-width: 768px) {
+            :root{ --logo-h:84px; }
+            main.impressum-content { padding: 28px 16px; }
+            .developer-box{ padding:12px 14px; gap:8px; }
+            .dev-right{ justify-content:center; }
+            .info-box{ padding:18px; }
+        }
+
+        /* Mobile */
         @media (max-width:480px){
-          .developer-box{ flex-direction:column; align-items:flex-start; }
+            h1{ font-size:1.5rem; margin-bottom:1rem; }
+            main.impressum-content{ padding:20px 14px; }
+            .developer-box{
+                flex-direction:column;
+                align-items:flex-start;
+                gap:8px;
+            }
+            .dev-right{ width:100%; justify-content:flex-start; gap:8px; }
+            .developer-box strong{ width:100%; }
+            .info-box{ padding:14px; }
         }
-        
-         @media (max-width: 768px) {
-            .impressum-content {
-                padding: 20px;
-            }
 
-            h1 {
-                font-size: 1.8rem;
-            }
-
-            h2 {
-                font-size: 1.3rem;
-            }
+        @media (prefers-reduced-motion: reduce){
+            .info-box, .developer-box { animation: none !important; transition:none !important; transform:none !important; }
         }
     </style>
 </head>
@@ -170,9 +193,14 @@
 
         <!-- Developer credit box -->
         <div class="developer-box" aria-label="Website Developer">
-            <strong>Website Developer:</strong>
-            <p><a href="https://electroraven.pages.dev/" target="_blank">Maximilian Grill</a></p>
-            <p><strong>E-Mail:</strong> <a href="mailto:g_maximilian@gmx.at">g_maximilian@gmx.at</a></p>
+            <div class="dev-left">
+                <strong>Website Developer</strong>
+                <p><a href="https://electroraven.pages.dev/" target="_blank" rel="noopener">Maximilian Grill</a></p>
+            </div>
+
+            <div class="dev-left">
+                <p><strong>E-Mail:</strong> <a href="mailto:g_maximilian@gmx.at">g_maximilian@gmx.at</a></p>
+            </div>
         </div>
     </main>
 </body>
