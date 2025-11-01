@@ -1,10 +1,7 @@
-/* Vision — adapted to match Angebot/Projekte look & responsiveness
-   Only this file changed; HTML kept as-is. */
-
 /* ROOT / COLORS */
 :root{
-  --brand-dark:#1a3474;
-  --accent:#7fb6d9;
+  --brand-dark:#000000;
+  --accent:#666666;
   --page-bg:#fffeef;
   --logo-h:90px;
   --nav-gap:16px;
