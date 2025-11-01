@@ -12,6 +12,9 @@
             --page-bg:#ffffff;
             --content-max:1100px;
             --logo-h:90px;
+
+            --link-color: #5a6b7a;   
+            --link-hover: #1a3474;   
         }
 
         /* Base */
@@ -47,7 +50,7 @@
             max-width: var(--content-max);
             margin: 0 auto;
             padding: 40px 20px;
-            flex: 1 0 auto; /* ensures footer sits at bottom */
+            flex: 1 0 auto;
             width:100%;
         }
 
@@ -56,8 +59,26 @@
 
         .org-subtitle { color: #666; font-style: italic; margin-bottom:0.6em; }
 
-        a { color: var(--brand-dark); text-decoration: none; }
-        a:hover{ text-decoration: underline; }
+        a {
+          color: var(--link-color);
+          text-decoration: none;
+        }
+        a:hover,
+        a:focus {
+          color: var(--link-hover);
+          text-decoration: underline;
+        }
+
+        .developer-box a,
+        .info-box a,
+        .nav-simple a {
+          color: var(--link-color);
+        }
+        .developer-box a:hover,
+        .info-box a:hover,
+        .nav-simple a:hover {
+          color: var(--link-hover);
+        }
 
         /* Grid for boxes */
         .info-grid {
