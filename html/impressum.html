@@ -76,7 +76,60 @@
             text-decoration: underline;
         }
 
-        @media (max-width: 768px) {
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            align-items: stretch;
+            margin-bottom: 20px;
+        }
+
+        .info-box{
+            padding:20px 22px;
+            border-radius:12px;
+            background:#ffffff;
+            border:1px solid rgba(26,52,116,0.06);
+            box-shadow:0 8px 24px rgba(26,52,116,0.04);
+
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        .info-box .org-name{
+            font-weight:700;
+            font-size:1.15rem;
+            margin-bottom:6px;
+            color:#1a3474;
+        }
+        .info-box p{ margin:0.45em 0; color:#222; }
+
+        .developer-box{
+            margin:50px auto 0;
+            padding:14px 18px;
+            border-radius:12px;
+            background:#f6f9fb;
+            border:1px solid rgba(26,52,116,0.06);
+            box-shadow:0 8px 20px rgba(26,52,116,0.04);
+            max-width:420px;
+            width:100%;
+            box-sizing:border-box;
+            clear: both;
+            z-index:1;
+
+            display:flex;
+            flex-wrap:wrap;
+            gap:12px;
+            align-items:center;
+            justify-content:flex-start;
+        }
+        .developer-box p{ margin:0; }
+
+        @media (max-width:480px){
+          .developer-box{ flex-direction:column; align-items:flex-start; }
+        }
+        
+         @media (max-width: 768px) {
             .impressum-content {
                 padding: 20px;
             }
@@ -99,23 +152,27 @@
     <main class="impressum-content">
         <h1>Impressum</h1>
 
-        <div class="contact-info">
-            <p class="org-name">^ verein 280
-            <p class="org-subtitle">Prävention.Bildung.Teilhabe</p>
-            <p>Vorgartenstraße 124/3/363</p>
-            <p>1020 Wien</p>
-            <p>ZVR-Zahl: 1312207522</p>
+        <div class="info-grid">
+            <div class="info-box" aria-labelledby="org-heading">
+                <div id="org-heading" class="org-name">verein 280</div>
+                <div class="org-subtitle">Prävention.Bildung.Teilhabe</div>
+                <p>Vorgartenstraße 124/3/363</p>
+                <p>1020 Wien</p>
+                <p>ZVR-Zahl: 1312207522</p>
+            </div>
+
+            <div class="info-box" aria-labelledby="contact-heading">
+                <h2 id="contact-heading">Kontakt</h2>
+                <p><strong>Telefon:</strong> <a href="tel:+436812030789">+43 681 20 300 789</a></p>
+                <p><strong>E-Mail:</strong> <a href="mailto:office@verein280.at">office@verein280.at</a></p>
+            </div>
         </div>
 
-        <div class="contact-info">
-            <h2>Kontakt</h2>
-            <p>
-                <a href="tel:+436812030789">+43 681 20 300 789</a>
-            </p>
-            <p>E-Mail:</p>
-            <p>
-                <a href="mailto:office@verein280.at">office@verein280.at</a>
-            </p>
+        <!-- Developer credit box -->
+        <div class="developer-box" aria-label="Website Developer">
+            <strong>Website Developer:</strong>
+            <p><a href="https://electroraven.pages.dev/" target="_blank">Maximilian Grill</a></p>
+            <p><strong>E-Mail:</strong> <a href="mailto:g_maximilian@gmx.at">g_maximilian@gmx.at</a></p>
         </div>
     </main>
 </body>
