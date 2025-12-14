@@ -11,7 +11,7 @@
 :root {
   --bg: #f6f7f9;
   --surface: #ffffff;
-  --surface-muted: #f0f2f5;
+  --surface-muted: #fff;
   --text: #1c1e21;
   --text-muted: #5f6368;
   --primary: #0b5ed7; /* professional blue */
@@ -31,7 +31,7 @@ body {
   margin: 0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
   color: var(--text);
-  background: linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+  background: linear-gradient(180deg, #fffeef 0%, var(--bg) 100%);
   line-height: 1.65;
 }
 
