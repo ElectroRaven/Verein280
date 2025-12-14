@@ -1,0 +1,360 @@
+/* ===============================
+   Jugend & Wirtschaft – Check-in Arbeitswelt
+   Professional, modern, accessible design
+   =============================== */
+
+/* -------- CSS Reset / Base -------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --surface-muted: #f0f2f5;
+  --text: #1c1e21;
+  --text-muted: #5f6368;
+  --primary: #0b5ed7; /* professional blue */
+  --primary-soft: #e7f0ff;
+  --accent: #198754; /* subtle green accent */
+  --border: #dcdfe4;
+  --radius: 14px;
+  --shadow-sm: 0 4px 12px rgba(0,0,0,0.06);
+  --shadow-md: 0 12px 32px rgba(0,0,0,0.08);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+  color: var(--text);
+  background: linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+  line-height: 1.65;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1, h2, h3 {
+  line-height: 1.25;
+  margin-top: 0;
+}
+
+/* -------- Page Layout -------- */
+.checkin-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+  display: grid;
+  gap: 72px;
+}
+
+section {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* -------- Back Button -------- */
+.back-to-project {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.back-to-project a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  background: var(--surface);
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 999px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.back-to-project a:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  background: var(--primary-soft);
+}
+
+.back-to-project a::before {
+  content: "←";
+  font-size: 1.1rem;
+}
+
+@media (max-width: 640px) {
+  .back-to-project {
+    top: 12px;
+    right: 12px;
+  }
+}
+
+/* -------- Header -------- */
+.checkin-header {
+  background: radial-gradient(1200px 400px at 10% -20%, var(--primary-soft), transparent 60%),
+              radial-gradient(800px 300px at 90% 0%, #eef6f1, transparent 55%),
+              var(--surface);
+  padding: 56px 48px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+}
+
+.checkin-header h1 {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 720px;
+}
+
+.funding-inline {
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: var(--surface-muted);
+  border-radius: 12px;
+}
+
+.funding-inline img {
+  height: 48px;
+  width: auto;
+}
+
+.funding-inline span {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* -------- Text Section -------- */
+.checkin-text {
+  background: var(--surface);
+  padding: 48px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.checkin-text p {
+  max-width: 820px;
+  font-size: 1.05rem;
+}
+
+.checkin-text p + p {
+  margin-top: 20px;
+}
+
+/* -------- Gallery -------- */
+.checkin-gallery h2 {
+  margin-bottom: 40px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.checkin-gallery {
+  margin-bottom: 40px;
+}
+
+.gallery-grid img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.gallery-grid img:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: var(--shadow-md);
+}
+
+/* -------- Podcasts -------- */
+.checkin-podcasts h2 {
+  margin-bottom: 40px;
+}
+
+.checkin-podcasts {
+  position: relative;
+  z-index: 1;
+}
+
+.podcast-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.podcast-item {
+  background: linear-gradient(180deg, var(--surface), #fafbfc);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.podcast-item:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.podcast-item h3 {
+  margin-bottom: 4px;
+}
+
+.podcast-item p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* -------- Custom Audio Player Styling -------- */
+.podcast-item audio {
+  width: 100%;
+  margin-top: 8px;
+  border-radius: 999px;
+}
+
+/* Chrome / Edge / Safari */
+.podcast-item audio::-webkit-media-controls-panel {
+  background: var(--primary-soft);
+}
+
+.podcast-item audio::-webkit-media-controls-play-button,
+.podcast-item audio::-webkit-media-controls-mute-button {
+  filter: saturate(1.2);
+}
+
+.podcast-item audio::-webkit-media-controls-current-time-display,
+.podcast-item audio::-webkit-media-controls-time-remaining-display {
+  color: var(--text);
+}
+
+/* Firefox */
+@supports (-moz-appearance: none) {
+  .podcast-item audio {
+    accent-color: var(--primary);
+  }
+}
+
+.podcast-item a {
+  margin-top: auto;
+  align-self: flex-start;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--primary);
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.podcast-item a:hover {
+  background: #d6e6ff;
+  transform: translateY(-2px);
+}
+
+/* -------- Partners -------- */
+.checkin-partners {
+  background: var(--surface);
+  padding: 48px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.checkin-partners h2 {
+  margin-bottom: 28px;
+}
+
+.checkin-partners ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 32px;
+}
+
+.checkin-partners li {
+  position: relative;
+  padding-left: 28px;
+  font-size: 0.95rem;
+}
+
+.checkin-partners li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+/* -------- Animations -------- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -------- Responsive -------- */
+@media (max-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .podcast-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .checkin-page {
+    padding: 32px 16px 64px;
+    gap: 56px;
+  }
+
+  .checkin-header,
+  .checkin-text,
+  .checkin-partners {
+    padding: 32px 24px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .podcast-list {
+    grid-template-columns: 1fr;
+  }
+
+  .funding-inline {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
